@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+}
+.product-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: auto; /* Đẩy badge xuống đáy card nếu card lệch chiều cao */
+}
+
+/* Các biến thể màu sắc của Badge dựa trên prop color */
+.badge.badge-green {
+    background-color: #e6fffa;
+    color: #319795;
+}
+
+.badge.badge-red {
+    background-color: #fff5f5;
+    color: #e53e3e;
+}
+
+.badge.badge-blue {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+.category-tag {
+    font-size: 12px;
+    color: #888;
+    margin-top: 8px;
+}
+.avatar-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 8px;               
+}
+.avatar-img{
+    border-radius: 50%; 
+    object-fit: cover;
+}
+/* Các biến thể của style mỗi khi kích thước truyền vào thay đổi */
+.avatar-sm .avatar-img { width: 30px; height: 30px; }
+.avatar-md .avatar-img { width: 50px; height: 50px; }
+.avatar-lg .avatar-img { width: 80px; height: 80px; }
+
+.btn-add-to-cart {
+    margin-top: 16px;
+    padding: 10px 16px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #2b6cb0;
+}
+
+/* Thao tác style khi nút bấm bị disabled (hết hàng) */
+.btn-add-to-cart:disabled {
+    background-color: #e2e8f0;
+    color: #a0aec0;
+    cursor: not-allowed;
+}
